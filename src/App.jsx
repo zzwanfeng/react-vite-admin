@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React from 'react'
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+// import loadable from './utils/loadable.jsx'
+import loadable from './utils/index'
+import 'animate.css'
+import './style/base.scss'
+import './style/App.scss'
 
-function App() {
-  const [count, setCount] = useState(0)
+// 公共模块
+const DefaultLayout = loadable(() => import(/* webpackChunkName: 'default' */ './containers'))
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+// 基础页面
+const View404 = loadable(() => import(/* webpackChunkName: '404' */ './views/Others/404'))
+const View500 = loadable(() => import(/* webpackChunkName: '500' */ './views/Others/500'))
+// const Login = loadable(() => import(/* webpackChunkName: 'login' */ './views/Login'))
+const Login = loadable(() => import(/* webpackChunkName: 'login' */ './views/Login'))
+
+const App = () => (
+  <Router>
+    <Switch>
+      {/* <Route path='/' exact render={() => <Redirect to='/index' />} /> */}
+      {/* <Route path='/500' component={View500} /> */}
+      <Route path='/' component={Login} />
+      {/* <Route path='/404' component={View404} /> */}
+      {/* <Route component={DefaultLayout} /> */}
+    </Switch>
+  </Router>
+)
 
 export default App
