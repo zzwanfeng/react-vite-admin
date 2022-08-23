@@ -1,5 +1,4 @@
-// import loadable from '@/utils/loadable.jsx'
-import loadable from './utils/index'
+import loadable from '@loadable/component'
 
 
 const Index = loadable(() => import(/* webpackChunkName: 'index' */ '@/views/Index'))
