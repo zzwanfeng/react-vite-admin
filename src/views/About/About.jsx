@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout, Divider, Row, Descriptions, Badge } from 'antd'
+import { Layout, Divider, Descriptions } from 'antd'
 import CustomBreadcrumb from '@/components/CustomBreadcrumb'
 import ProjectConfigJson from '../../../package.json'
 
