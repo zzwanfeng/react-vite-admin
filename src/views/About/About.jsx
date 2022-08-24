@@ -21,8 +21,6 @@ Object.keys(devDependencies).forEach(key => {
   dependenciesObj.version = devDependencies[key]
   DevDependenciesArr.push(dependenciesObj)
 })
-console.log('DependenciesArr', DependenciesArr);
-console.log('DevDependenciesArr', DevDependenciesArr);
 
 
 const DependenciesView = () => {
