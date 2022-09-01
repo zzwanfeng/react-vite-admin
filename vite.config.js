@@ -41,7 +41,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'static',
-    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks (id) {
@@ -50,12 +49,6 @@ export default defineConfig({
           }
         }
       }
-    },
-    terserOptions: {
-      compress: {
-        drop_console: process.env.VITE_APP_NAME !== 'development',
-        drop_debugger: process.env.VITE_APP_NAME !== 'development'
-      },
     },
     chunkSizeWarningLimit: 1000,
     reportCompressedSize: false
