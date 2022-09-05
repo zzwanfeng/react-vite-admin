@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Layout, Input, Icon, Form, Button, Divider, message, notification } from 'antd'
+import { Layout, Input, Form, Button, Divider, message, notification } from 'antd'
 import { withRouter } from 'react-router-dom'
 // import axios from '@/api'
 // import { API } from '@/api/config'

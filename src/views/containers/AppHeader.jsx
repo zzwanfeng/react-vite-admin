@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Dropdown, Icon, Layout, Avatar, Badge } from 'antd'
+import { Menu, Dropdown, Layout, Avatar, Badge } from 'antd'
 
 const { Header } = Layout
 
@@ -11,18 +11,22 @@ const AppHeader = props => {
       <Menu.ItemGroup title='用户设置'>
         <Menu.Divider />
         <Menu.Item>
-          <Icon type='edit' />
+          {/* <Icon type='edit' /> */}
+          Icon
           个人设置
         </Menu.Item>
         <Menu.Item>
-          <Icon type='setting' theme='filled' />
+          {/* <Icon type='setting' theme='filled' /> */}
+          Icon
           系统设置
         </Menu.Item>
       </Menu.ItemGroup>
       <Menu.Divider />
       <Menu.Item>
         <span onClick={loginOut}>
-          <Icon type='logout' /> 退出登录
+          {/* <Icon type='logout' />  */}
+          Icon
+          退出登录
         </span>
       </Menu.Item>
     </Menu>
@@ -30,29 +34,33 @@ const AppHeader = props => {
   return (
     <Header className='header'>
       <div className='left'>
-        <Icon
+        {/* <Icon
           style={{ fontSize: '2rem' }}
           onClick={menuClick}
           type={menuToggle ? 'menu-unfold' : 'menu-fold'}
-        />
+        /> */}
+        Icon
       </div>
       <div className='right'>
         <div className='mr15'>
           <a rel='noopener noreferrer' href='https://github.com/zzhStrive/react-vite-admin' target='_blank'>
-            <Icon type='github' style={{ color: '#000' }} />
+            {/* <Icon type='github' style={{ color: '#000' }} /> */}
+            Icon
           </a>
         </div>
         <div className='mr15'>
           <Badge dot={true} offset={[-2, 0]}>
             <a href='https://github.com/zzhStrive/react-vite-admin' style={{ color: '#000' }}>
-              <Icon type='bell' />
+              {/* <Icon type='bell' /> */}
+              Icon
             </a>
           </Badge>
         </div>
         <div>
           <Dropdown overlay={menu} overlayStyle={{ width: '20rem' }}>
             <div className='ant-dropdown-link'>
-              <Avatar icon='user' src={avatar} alt='avatar' style={{ cursor: 'pointer' }} />
+              {/* <Avatar icon='user' src={avatar} alt='avatar' style={{ cursor: 'pointer' }} /> */}
+              Icon
             </div>
           </Dropdown>
         </div>
