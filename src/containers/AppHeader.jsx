@@ -1,65 +1,87 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Dropdown, Layout, Avatar, Badge } from 'antd'
+import { iconToElement } from '@/utils/util'
 
 const { Header } = Layout
 
 const AppHeader = props => {
   let { menuClick, avatar, menuToggle, loginOut } = props
+
+  const items = [
+    {
+      label: '用户设置',
+      key: 'item-1',
+      type: 'group',
+      children: [
+        {
+          label: '个人设置',
+          key: 'submenu-item-1'
+        },
+        {
+          label: '系统设置',
+          key: 'submenu-item-2'
+        }
+      ],
+    },
+    {
+      label: '退出登录',
+      key: 'item-2',
+    },
+  ];
+
+  const menuOnClick = ({ key }) => {
+    if (key === 'item-2') {
+      loginOut()
+    }
+  };
+
   const menu = (
-    <Menu>
-      <Menu.ItemGroup title='用户设置'>
-        <Menu.Divider />
-        <Menu.Item>
-          {/* <Icon type='edit' /> */}
-          icon
-          个人设置
-        </Menu.Item>
-        <Menu.Item>
-          {/* <Icon type='setting' theme='filled' /> */}
-          icon
-          系统设置
-        </Menu.Item>
-      </Menu.ItemGroup>
-      <Menu.Divider />
-      <Menu.Item>
-        <span onClick={loginOut}>
-          {/* <Icon type='logout' />  */}
-          icon
-          退出登录
-        </span>
-      </Menu.Item>
-    </Menu>
+    <Menu
+      onClick={menuOnClick}
+      items={items}
+    />
   )
+
   return (
     <Header className='header'>
       <div className='left'>
-        {/* <Icon
-          style={{ fontSize: '2rem' }}
+        <span
+          style={{ fontSize: '2rem', cursor: 'pointer' }}
           onClick={menuClick}
-          type={menuToggle ? 'menu-unfold' : 'menu-fold'}
-        /> */}
-        icon
+        >
+          {menuToggle ? iconToElement('MenuUnfoldOutlined', { fontSize: '2rem' }) : iconToElement('MenuFoldOutlined', { fontSize: '2rem' })}
+        </span>
       </div>
+
       <div className='right'>
         <div className='mr15'>
           <a rel='noopener noreferrer' href='https://github.com/zzhStrive/react-vite-admin' target='_blank'>
-            {/* <Icon type='github' style={{ color: '#000' }} /> */}
-          icon
+            <span style={{ color: '#000' }}>
+              {iconToElement('GithubOutlined', { fontSize: '2rem' }, { twoToneColor: "#eb2f96" })}
+            </span>
           </a>
         </div>
+
         <div className='mr15'>
-          <Badge dot={true} offset={[-2, 0]}>
-            <a href='hhttps://github.com/zzhStrive/react-vite-admin' style={{ color: '#000' }}>
-              {/* <Icon type='bell' /> */}
-          icon
-            </a>
-          </Badge>
+          {/* Badge 徽标数 严格模式下目前会报错 */}
+          {/* <Badge dot={true} offset={[-2, 0]}> */}
+          <a href='https://github.com/zzhStrive/react-vite-admin' style={{ color: '#000' }}>
+            {iconToElement('BellOutlined', { fontSize: '2rem' })}
+          </a>
+          {/* </Badge> */}
         </div>
+
         <div>
-          <Dropdown overlay={menu} overlayStyle={{ width: '20rem' }}>
-            <div className='ant-dropdown-link'>
-              <Avatar icon='user' src={avatar} alt='avatar' style={{ cursor: 'pointer' }} />
+          <Dropdown
+            overlay={menu}
+            overlayStyle={{ width: '20rem' }}
+          >
+            <div
+              onClick={(e) => e.preventDefault()}
+              className='ant-dropdown-link'
+            >
+              <Avatar icon={iconToElement('UserOutlined', { fontSize: '2rem' })} src={avatar} alt='avatar' style={{ cursor: 'pointer' }} />
             </div>
           </Dropdown>
         </div>

@@ -242,3 +242,73 @@ a:focus,
 .mr15 {
     margin-right: 15px;
 }
+
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.r-flex {
+  display: flex !important;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.jsb {
+    justify-content: space-between;
+  }
+
+  &.jsc {
+    justify-content: center;
+  }
+
+  &.aic {
+    align-items: center;
+  }
+
+  .content {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

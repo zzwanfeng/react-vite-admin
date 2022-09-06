@@ -5,7 +5,22 @@
 window.global ||= window;
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom/client";
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+
+// Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
+// react-dom:ReactDOM.render已弃用。使用它会警告并在 React 17 模式下运行您的应用程序。
+// react-dom:ReactDOM.hydrate已弃用。使用它会警告并在 React 17 模式下运行您的应用程序。
+// react-dom:ReactDOM.unmountComponentAtNode已弃用。
+// react-dom:ReactDOM.renderSubtreeIntoContainer已弃用。
+// react-dom/server:ReactDOMServer.renderToNodeStream已弃用。
+// 要解决它，您可以恢复到以前版本的 React 或更新您的 index.js 文件以符合 React 18 语法
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

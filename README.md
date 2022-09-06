@@ -6,7 +6,7 @@
 
 ## 技术栈
 
-react@16.10.1 + vite@3.0.7 + antd@3.23.5 + axios@0.19.0
+react@18.2.0 + vite@3.0.7 + antd@4.23.0 + axios@0.19.0
 
 ## 快速启动
 
@@ -20,11 +20,11 @@ git clone git@github.com:zzhStrive/react-vite-admin.git
 cd react-vite-admin
 
 # 安装依赖
-npm install  / yarn
+npm install
 
 # 启动服务
-npm run dev  / yarn dev
+npm run dev dev
 
 # 打包
-npm run build  / yarn build
+npm run build build
 ```

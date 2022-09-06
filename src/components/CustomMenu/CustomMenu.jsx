@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Menu } from 'antd'
 import { Link, withRouter } from 'react-router-dom'
+import { iconToElement } from '@/utils/util'
+
 
 // 处理 pathname
 const getOpenKeys = string => {
@@ -52,35 +54,32 @@ const CustomMenu = props => {
     })
   }
 
-  const renderMenuItem = ({ key, icon, title }) => (
-    <Menu.Item key={key}>
-      123-{key}
-      <Link to={key}>
-        {/* {icon && <Icon type={icon} />} */}
-          icon
-          <span>{title}</span>
-      </Link>
-    </Menu.Item>
-  )
+  // 处理下路由
+  const menuFormatting = (value) => {
+    const newObject = {
+      label: value.title,
+      key: value.key,
+      icon: '',
+      children: menuChilderFormatting(value.subs),
+    }
 
-  // 循环遍历数组中的子项 subs ，生成子级 menu
-  const renderSubMenu = ({ key, icon, title, subs }) => {
-    return (
-      <Menu.SubMenu
-        key={key}
-        title={
-          <span>
-            {/* {icon && <Icon type={icon} />} */}
-            icon
-            <span>{title}</span>
-          </span>
-        }>
-        {subs &&
-          subs.map(item => {
-            return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item)
-          })}
-      </Menu.SubMenu>
-    )
+    if (value.icon && value.icon !== '') {
+      newObject.icon = iconToElement(value.icon)
+    }
+    return newObject
+  }
+
+  // 处理路由-子路由
+  const menuChilderFormatting = (value) => {
+    const newArr = value && value.map(item => {
+      return menuFormatting(item)
+    })
+    return newArr
+  }
+
+  // 选中菜单
+  const handleSelect = ({ item, key, keyPath, selectedKeys, domEvent }) => {
+    props.history.push(key);
   }
 
   return (
@@ -90,11 +89,12 @@ const CustomMenu = props => {
       openKeys={openKeys}
       selectedKeys={selectedKeys}
       onClick={({ key }) => setstate(prevState => ({ ...prevState, selectedKeys: [key] }))}
-      onOpenChange={onOpenChange}>
-      {props.menu &&
-        props.menu.map(item => {
-          return item.subs && item.subs.length > 0 ? renderSubMenu(item) : renderMenuItem(item)
-        })}
+      onOpenChange={onOpenChange}
+      onSelect={handleSelect}
+      items={props.menu && props.menu.map(item => {
+        return menuFormatting(item)
+      })}
+    >
     </Menu>
   )
 }

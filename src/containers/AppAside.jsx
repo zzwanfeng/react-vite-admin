@@ -2,17 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Layout } from 'antd'
 import CustomMenu from '@/components/CustomMenu'
+import { iconToElement } from '@/utils/util'
 
 const { Sider } = Layout
+
 
 const AppAside = props => {
   let { menuToggle, menu } = props
   return (
     <Sider className='aside' collapsed={menuToggle}>
       <div className='logo'>
-        <a rel='noopener noreferrer' href='https://github.com/zzhStrive/react-vite-admin' target='_blank'>
-          icon
-          {/* <Icon type='github' style={{ fontSize: '3.8rem', color: '#fff' }} /> */}
+        <a rel='noopener noreferrer' href='https://github.com/zzhStrive/react-vite-admin' target='_blank'
+          style={{ color: '#fff' }}
+        >
+          {iconToElement('GithubOutlined', { fontSize: '3rem' })}
         </a>
       </div>
       <CustomMenu menu={menu}></CustomMenu>
