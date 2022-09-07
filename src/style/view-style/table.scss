@@ -1,6 +1,14 @@
-.toc-affix {
+.table{
+  position: relative;
+
+  .toc-affix {
     position: absolute;
-    top: 8px;
+    top: 80px;
     right: 20px;
     z-index: 99;
+  }
+
+  .ant-affix{
+    right: 20px;
+  }
 }
