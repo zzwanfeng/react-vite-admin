@@ -1,35 +1,35 @@
 import React, { lazy } from 'react'
 
 
-const Index = lazy(() => import(/* webpackChunkName: 'index' */ '@/views/Index'))
+const Index = lazy(() => import('@/views/Index'))
 
 // 通用
-const ButtonView = lazy(() => import(/* webpackChunkName: 'button' */ '@/views/PublicView/Button'))
-const IconView = lazy(() => import(/* webpackChunkName: 'icon' */ '@/views/PublicView/Icon'))
+const ButtonView = lazy(() => import('@/views/PublicView/Button'))
+const IconView = lazy(() => import('@/views/PublicView/Icon'))
 
 // 导航
-const DropdownView = lazy(() => import(/* webpackChunkName: 'dropdown' */ '@/views/NavView/Dropdown'))
-const MenuView = lazy(() => import(/* webpackChunkName: 'menu' */ '@/views/NavView/Menu'))
-const StepView = lazy(() => import(/* webpackChunkName: 'step' */ '@/views/NavView/Step'))
+const DropdownView = lazy(() => import('@/views/NavView/Dropdown'))
+const MenuView = lazy(() => import('@/views/NavView/Menu'))
+const StepView = lazy(() => import('@/views/NavView/Step'))
 
 // 表单
-const FormBaseView = lazy(() => import(/* webpackChunkName: 'formBase' */ '@/views/FormView/FormBaseView'))
-const FormStepView = lazy(() => import(/* webpackChunkName: 'formStep' */ '@/views/FormView/FormStepView'))
+const FormBaseView = lazy(() => import('@/views/FormView/FormBaseView'))
+const FormStepView = lazy(() => import('@/views/FormView/FormStepView'))
 
 // 展示
-const TableView = lazy(() => import(/* webpackChunkName: 'table' */ '@/views/ShowView/Table'))
-const CollapseView = lazy(() => import(/* webpackChunkName: 'collapse' */ '@/views/ShowView/Collapse'))
-const TreeView = lazy(() => import(/* webpackChunkName: 'tree' */ '@/views/ShowView/Tree'))
-const TabsView = lazy(() => import(/* webpackChunkName: 'tabs' */ '@/views/ShowView/Tabs'))
+const TableView = lazy(() => import('@/views/ShowView/Table'))
+const CollapseView = lazy(() => import('@/views/ShowView/Collapse'))
+const TreeView = lazy(() => import('@/views/ShowView/Tree'))
+const TabsView = lazy(() => import('@/views/ShowView/Tabs'))
 
 // 其它
-const ProgressView = lazy(() => import(/* webpackChunkName: 'progress' */ '@/views/Others/Progress'))
-const AnimationView = lazy(() => import(/* webpackChunkName: 'animation' */ '@/views/Others/Animation'))
-const EditorView = lazy(() => import(/* webpackChunkName: 'editor' */ '@/views/Others/Editor'))
-const UploadView = lazy(() => import(/* webpackChunkName: 'upload' */ '@/views/Others/Upload'))
+const ProgressView = lazy(() => import('@/views/Others/Progress'))
+const AnimationView = lazy(() => import('@/views/Others/Animation'))
+const EditorView = lazy(() => import('@/views/Others/Editor'))
+const UploadView = lazy(() => import('@/views/Others/Upload'))
 
-const Three = lazy(() => import(/* webpackChunkName: 'three' */ '@/views/TestView'))
-const About = lazy(() => import(/* webpackChunkName: 'about' */ '@/views/About'))
+const Three = lazy(() => import('@/views/TestView'))
+const About = lazy(() => import('@/views/About'))
 
 const routes = [
   { path: '/index', exact: true, name: 'Index', component: Index, auth: [1] },

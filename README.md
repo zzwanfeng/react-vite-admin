@@ -4,6 +4,10 @@
 
 基于 React 生态系统搭建的后台管理系统模板
 
+> [项目预览地址](https://github.react-vite-admin.zzhvv.com/#/login)
+
+> [ts 版本](https://github.com/zzhStrive/react-vite-ts-admin)
+
 ## 技术栈
 
 react@18.2.0 + vite@3.0.7 + antd@4.23.0 + axios@0.19.0

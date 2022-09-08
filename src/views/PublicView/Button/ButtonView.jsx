@@ -3,6 +3,7 @@ import CustomBreadcrumb from '@/components/CustomBreadcrumb'
 import { Layout, Row, Col, Button, Divider } from 'antd'
 import '@/style/view-style/button.scss'
 import { iconToElement } from '@/utils/util'
+import IconButton from './components/IconButton'
 
 const ButtonGroup = Button.Group
 
@@ -104,45 +105,7 @@ const ButtonView = () => {
 
           <Col span={12}>
             <div className='base-style r-flex aic'>
-              <Button
-                type='primary'
-                shape='circle'
-                icon='search'
-                icon={iconToElement('SearchOutlined', { fontSize: '1.5rem' })}
-              />
-
-              <Button type='primary' shape='circle'>
-                A
-              </Button>
-
-              <Button
-                type='primary'
-                icon={iconToElement('SearchOutlined', { fontSize: '1.3rem' })}
-              >
-                Search
-              </Button>
-
-              <Button
-                shape='circle'
-                icon={iconToElement('SearchOutlined', { fontSize: '1.5rem' })}
-              />
-
-              <Button
-                icon={iconToElement('SearchOutlined', { fontSize: '1.3rem' })}
-              >Search</Button>
-
-              <Button
-                type='dashed'
-                shape='circle'
-                icon={iconToElement('SearchOutlined', { fontSize: '1.5rem' })}
-              />
-
-              <Button
-                type='dashed'
-                icon={iconToElement('SearchOutlined', { fontSize: '1.3rem' })}
-              >
-                Search
-              </Button>
+              <IconButton></IconButton>
             </div>
 
             <div className='base-style'>
