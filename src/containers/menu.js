@@ -109,11 +109,11 @@ const menu = [
         key: '/others/upload',
         icon: ''
       },
-      // {
-      //   title: '富文本',
-      //   key: '/others/editor',
-      //   icon: ''
-      // },
+      {
+        title: '富文本',
+        key: '/others/editor',
+        icon: ''
+      },
       {
         title: '404',
         key: '/404',
