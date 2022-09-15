@@ -6,7 +6,7 @@
 
 > [项目预览地址](https://github.react-vite-admin.zzhvv.com/#/login)
 
-> [ts 版本](https://github.com/zzhStrive/react-vite-ts-admin)
+> ~~[ts 版本](https://github.com/zzhStrive/react-vite-ts-admin)~~
 
 ## 技术栈
 
